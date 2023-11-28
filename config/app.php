@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        \App\Weather\Entity\Weather\Providers\WeatherServiceProvider::class,
         /*
          * Application Service Providers...
          */

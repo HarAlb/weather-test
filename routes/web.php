@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\User\City\CityController;
+use App\Http\Controllers\User\CityController;
+use App\Http\Controllers\User\WeatherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('', [CityController::class, 'index']);
         Route::get('/mine', [CityController::class, 'mine']);
         Route::post('/', [CityController::class, 'store']);
+    });
+
+    Route::prefix('weather')->group(function (){
+        Route::get('', [WeatherController::class, 'index']);
     });
 });
 
